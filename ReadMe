@@ -1,0 +1,51 @@
+### What is this
+This package is based on a certain programm which is aimmed for simulation of production of a certain BSM Particle, whose properties are mentioned in 
+    "Searching for Long-lived Particles: A Compact Detector for Exotics at LHCb
+    Vladimir V. Gligorov,1 Simon Knapen,2, 3 Michele Papucci,2, 3 and Dean J. Robinson4"
+And this model of LLP is simulated in the paper above.
+
+### What can it do
+For simple use without caring of how it works(which is simple and plain), one may SKIP THIS PART.
+This package contains several simple python Programms, the packages used or may be used in the programm are listed below:
+    import subprocess
+    from datetime import datetime
+    import os
+    import subprocess
+    import os
+    import csv
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import mplhep as hep
+    import pandas as pd
+    import random
+    from tqdm import tqdm
+    import glob
+    from mpl_toolkits.mplot3d import Axes3D
+
+This pack directly use the Terminal to run a ### pythia8 ### programm which has a significant similation with main41.cc (Pythia8 Version: 8.1), again it is NOT yet provided by this package.   And it will catch the OUTPUT OF THE TERMINAL DIRECTLY, then convert the output to a txt file, then finally convert the txt file to a serise of csv file. The final csv file contains the mothers and daughter of LLP, whose PID is defined as '999999', which you can easily see yourself in the output csv file, and LLP itself is noted as well. In the csv file, the 4-momentum, production vertex, tau, as well as other datas of each particle are provided, the complete list of data types are listed below:
+    'no', 'id', 'name', 'status1', 'mother1','mother2', 'daughter1','daughter2', 'colour1','colour2', 'p_x', 'p_y', 'p_z', 'e', 'm', 'scale', 'pol', 'xProd', 'yProd', 'zProd', 'tProd', 'tau'
+
+The data is documented for analyzation of Detecter reach of this particular Particle 999999.
+
+
+### What outernal Package does it need?
+Pythia8 with HepMC, python with certain packages lised above.
+
+### How to Run This Program?
+    Step1: Change every dictionary in the .py to real path on your computer, what the path stands for are commanted in the .py.
+    Step2: Run the 'Main.py'
+    Step3: Check if there's .csv file with below format:
+        '''
+        no,id,name,status1,mother1,mother2,daughter1,daughter2,colour1,colour2,p_x,p_y,p_z,e,m,scale,pol,xProd,yProd,zProd,tProd,tau
+        0,90,(system),-11,0,0,0,0,0,0,0.00000,0.00000,0.00000,0.00000,0.00000,0.00000,9.00000,0.00000e+00,0.00000e+00,0.00000e+00,0.00000e+00,0.00000e+00
+        1,511,(B0),-84,0,0,1777,1778,0,0,3.29043,0.30385,23.32443,24.14171,5.27958,0.00000,9.00000,0.00000e+00,0.00000e+00,0.00000e+00,0.00000e+00,2.49005e-01
+        2,310,(K_S0),-91,1,0,2124,2125,0,0,3.19911,1.80979,18.58232,18.94887,0.49761,0.00000,9.00000,1.55194e-01,1.43334e-02,1.10010e+00,1.13864e+00,1.92901e-01
+        3,999999,GeneralResonance,91,1,0,0,0,0,0,0.09132,-1.50594,4.74212,5.19284,1.48383,0.00000,9.00000,1.55189e-01,1.43305e-02,1.10007e+00,1.13861e+00,1.36734e+03
+        4,999999,GeneralResonance,91,3,0,0,0,0,0,0.09132,-1.50594,4.74212,5.19284,1.48383,0.00000,9.00000,1.55189e-01,1.43305e-02,1.10007e+00,1.13861e+00,1.36734e+03
+        5,-521,(B-),-91,0,0,2052,2053,0,0,-2.25489,-6.66441,24.68900,26.20908,5.27925,0.00000,9.00000,0.00000e+00,0.00000e+00,0.00000e+00,0.00000e+00,6.03187e-02
+        6,-321,K-,91,5,0,0,0,0,0,-1.91863,-6.85979,18.72073,20.03615,0.49368,0.00000,9.00000,-2.57635e-02,-7.61450e-02,2.82087e-01,2.99455e-01,1.36612e+02
+        7,999999,GeneralResonance,91,5,0,0,0,0,0,-0.33626,0.19538,5.96828,6.17294,1.52761,0.00000,9.00000,-2.57635e-02,-7.61450e-02,2.82087e-01,2.99455e-01,1.34467e+03
+        8,999999,GeneralResonance,91,7,0,0,0,0,0,-0.33626,0.19538,5.96828,6.17294,1.52761,0.00000,9.00000,-2.57635e-02,-7.61450e-02,2.82087e-01,2.99455e-01,1.34467e+03
+        '''
+    IF so, then you successed.
+
